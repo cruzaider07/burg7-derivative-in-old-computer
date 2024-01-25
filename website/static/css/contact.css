@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito+Sans:opsz@6..12&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.offscreen{
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+input, 
+textarea,
+button{
+    font: inherit;
+}
+
+/* VARIABLES */
+
+:root{
+    --ff: 'Nunito Sans', sans-serif;
+    --ff-headings: "Fugaz One", sans-serif;
+    --fs: clamp(1rem, 2.2vh, 1.2rem);
+
+    /* COLOR */
+
+    --color: white;
+    --link-color: white;
+    --link-hover: orange;
+    --border: 2px solid orange;
+    --button-hover: black;
+    --col-bgcolor: orange;
+    --col-bdcolor: rgb(184, 0, 0);
+    --dark-red: rgb(184, 0, 0);
+    --nav-bg-color: rgb(184, 0, 0);
+}
+
+/* GENERAL */
+
+html{
+    scroll-behavior: smooth;
+    font-family: var(--ff);
+    font-size: var(--fs);
+}
+
+body{
+    overflow: hidden;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    padding: 1rem 2em;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+
+.logo{
+    position: relative;
+    top: 2px;
+    transform: scale(2);
+}
+
+.logo:hover{
+    
+    color: orange;
+}
+
+ul{
+    list-style-type: none;
+    display: flex; 
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: 3rem;
+
+}
+
+a:any-link{
+    color: var(--link-color);
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible{
+
+    color: var(--link-hover); 
+}
+
+.signup{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid orange;
+    border-radius: 1rem;
+}
+
+.signup:hover{
+    background-color: orange;
+    color:rgb(184, 0, 0);
+}
+
+.account_circle{
+    color: white;
+    scale: 2;
+}
+
+section{
+    height: 100vh;
+}
+
+.section2{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),  /* use linear-gradient before url() */
+                      url(../img/burger-about-banner.jpg);
+    background-size: 100vw 100vh;       /* cover doesn't cover the whole viewport */
+    background-repeat: no-repeat;
+}
+
+
+.section2 h1{
+    position: absolute;
+    top: 5rem;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.us{
+    color: white;
+    text-shadow: 0 0 4px black;
+}
+
+.section2-article{
+    padding: 6rem 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section2__div{
+    width: 47%;
+}
+
+.section2__p{
+    margin: 1rem;
+}
+
+.contact-label{
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--dark-red);
+    font-weight: bold;
+}
+
+.contact-input{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 2px solid orange;
+    width: 100%;
+    caret-color: #ffa500;
+}
+
+.contact-input:focus-visible{
+    outline: 2px solid orange;
+}
+
+.contact-input::placeholder{
+    color: var(--dark-red);
+}
+
+.contact-button-container{
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#contact-button{
+    color: var(--dark-red);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid orange;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+#contact-button:hover{
+    background-color: var(--dark-red);
+    border: none;
+    color: orange;
+
+
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+@keyframes visible{
+    0%{
+        top: 0%;
+        opacity: 0;
+    }
+
+    30%{
+        top: 50%;
+        opacity: 1;
+    }
+
+    70%{                                             
+        top: 50%;
+        opacity: 1;
+    }
+
+    100%{
+        top: -10%;
+        opacity: 1;
+
+    }
+}
+
+.form-submitted{
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 5px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}

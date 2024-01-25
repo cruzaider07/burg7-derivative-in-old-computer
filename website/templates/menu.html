@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ronald">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burg - Menu</title>
+    <link rel="icon" href="../static/img/logo_orange.ico">
+    <link rel="stylesheet" href="../static/css/menu.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav>
+        <a class="logo-container" href="index.html">
+            <span class="material-symbols-outlined logo">
+                lunch_dining
+            </span>
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+            <a>
+                <span class="material-symbols-outlined account_circle">
+                account_circle
+                </span>
+            </a>
+        {% else %}
+            <a class="signup" href="/signup">Sign Up</a>
+        {% endif %}
+
+
+    </nav>
+
+    <section class="section1" id="food">
+        <form method="POST" id="menu_form">
+            <div class="section1__row row">
+                <div class="section1__col col">
+                    <img class="section1__img" src="../static/img/burger2.png" alt="">
+                    <p class="section1__p">Meaty-Cheezy Burger</p>
+                    <span class="price">$4</span>
+                    <div class="input-container">
+                        <span class="material-symbols-outlined remove" onclick="decrement(this)">remove</span>
+                        <div class="item_no__container" id="item_no__container">
+                            <input class="item_no" id="qty_no" name="qty_no" min="0" max="99" type="number" value="0" onClick="this.value=''">
+                                <!-- <span class="item_no" id="item_no">0</span> -->
+                        </div>
+                        <span class="material-symbols-outlined add" onclick="increment(this)">add</span>
+                    </div>
+                </div>
+                
+                <div class="section1__col col">
+                    <img class="section1__img" src="../static/img/burger1.png" alt="">
+                    <p class="section1__p">Bacon-Layered Burger</p>
+                    <span class="price">$4</span>
+                    <div class="input-container">
+                        <span class="material-symbols-outlined remove" onclick="decrement(this)">remove</span>
+                        <div class="item_no__container" id="item_no__container">
+                            <input class="item_no" id="qty_no1" name="qty_no1" min="0" max="99" type="number" value="0" onClick="this.value=''">
+                                <!-- <span class="item_no item_no_1" id="item_no">0</span> -->
+                        </div>
+                        <span class="material-symbols-outlined add" onclick="increment(this)">add</span>
+                    </div>
+                </div>
+
+                <div class="section1__col col">
+                    <img class="section1__img" src="../static/img/burger3.png" alt="">
+                    <p class="section1__p">Crispy-Layered Burger</p>
+                    <span class="price">$4</span>
+                    <div class="input-container">
+                        <span class="material-symbols-outlined remove" onclick="decrement(this)">remove</span>
+                        <div class="item_no__container" id="item_no__container">
+                            <input class="item_no" id="qty_no2" name="qty_no2" min="0" max="99" type="number" value="0" onClick="this.value=''">
+                                <!-- <span class="item_no" id="item_no">0</span> -->
+                        </div>
+                        <span class="material-symbols-outlined add" onclick="increment(this)">add</span>
+                    </div>
+                </div>
+
+            <button type="submit" class="add-to-cart-button add-to-cart" id="add-to-cart-button"><span class="material-symbols-outlined add-to-cart">
+                add_shopping_cart
+            </span>
+            </button>
+        </form>
+        
+        <form class="dropdown" id="dropdown">
+            <div class="emailadd">{{user.email}}</div>
+            <a class="my-ordered">Ordered</a>
+            <a type="submit" class="logout" href="/logout">Logout</a>
+        </form>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../static/script.js"></script>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ronald">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burg - Contact</title>
+    <link rel="icon" href="../static/img/logo_orange.ico">
+    <link rel="stylesheet" href="../static/css/contact.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav>
+        <a class="logo-container" href="index.html">
+            <span class="material-symbols-outlined logo">
+                lunch_dining
+            </span>
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+            <a>
+                <span class="material-symbols-outlined account_circle">
+                account_circle
+                </span>
+            </a>
+        {% else %}
+            <a class="signup" href="/signup">Sign Up</a>
+        {% endif %}
+    </nav>
+    <section class="section2" id="contact">
+        <h1>Contact <span class="us">Us</span></h1>
+        <article class="section2-article">
+            <div class="section2__div fieldset-container">
+                <form method="POST" id="myForm">
+                    <p class="section2__p">
+                        <label class="contact-label" for="name">Name:</label>
+                        <input class="contact-input" type="text" id="name" name="name" placeholder="Type your name here">
+                    </p>
+                    
+                    <p class="section2__p">
+                        <label class="contact-label" for="textarea">Message:</label>
+                        <textarea class="contact-input" name="textarea" id="textarea" cols="30" rows="10" placeholder="Type your message here"></textarea>
+                    </p>
+                    <p class="contact-button-container">
+                        <button type="submit" class="contact-button" id="contact-button">Submit</button>
+                    </p>
+                </form>
+            </div>
+
+            <div class="section2__div">    
+                <img class="contact-img" src="../static/img/burger-contact-with-blur.png" alt="">
+            </div>
+        </article>
+
+        <!-- <div class="popup center" id="popup">
+            <span class="material-symbols-outlined">
+                check_circle
+            </span>
+            Form Submitted!
+        </div> -->
+
+        <p class="form-submitted" id="form-submitted">
+            <span class="material-symbols-outlined">
+                check_circle
+                </span>
+                Form Submitted!
+        </p>
+
+        <form class="dropdown">
+            <div class="emailadd">{{user.email}}</div>
+            <a class="my-ordered">Ordered</a>
+            <a type="submit" class="logout" href="/logout">Logout</a>
+        </form>
+    </section>
+    
+
+<script src="../static/script.js"></script>
+    
+
+</body>
+</html>

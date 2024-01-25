@@ -1,0 +1,75 @@
+<!-- typed -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burg - Sign Up</title>
+    <link rel="icon" href="../static/img/logo_orange.ico">
+    <link rel="stylesheet" href="../static/css/signup.css">
+    <link rel="stylesheet" href="../static/css/msg.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <a class="logo-container" href="/">
+        <span class="material-symbols-outlined logo">
+            lunch_dining
+        </span>
+    </a>
+
+    <form method="POST">
+        <div class="signup-html">
+            <h1>Sign Up</h1>
+            <p>
+                <label for="">Email:</label>
+                <p class="input-container">
+                    <input type="email" name="email" id="email" required>
+                </p>
+            </p>
+            <p>
+                <label for="">First Name:</label>
+                <p class="input-container">
+                    <input type="fname" name="fname" id="fname" required>
+                </p>
+            </p>
+            <p>
+                <label for="">Last Name:</label>
+                <p class="input-container">
+                    <input type="lname" name="lname" id="lname" required>
+                </p>
+            </p>
+            <p>
+                <label for="">Password:</label>
+                <p class="input-container">
+                    <input type="password" name="p1" id="p1" required>
+                </p>
+            </p>
+            <p>
+                <label for="">Password (Confirmation):</label>
+                <p class="input-container">
+                    <input type="password" name="p2" id="p2" required>
+                </p>
+            </p>
+            <br>
+            <button type="submit" class="signup">Sign Up</button>
+        </div>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    {% for message, category in messages %}
+    {% if category == 'error' %}
+    <div class="error">
+        {{message}}
+        <button type="button" class="close" onclick="remove()">&times;</button>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <script src="../static/script.js"></script>
+    
+</body>
+</html>

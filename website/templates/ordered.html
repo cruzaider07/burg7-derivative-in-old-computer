@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burg - Ordered Foods</title>
+    <link rel="stylesheet" href="../static/css/ordered.css">
+    <link rel="icon" href="../static/img/logo_orange.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <a class="logo-container" href="index.html">
+            <span class="material-symbols-outlined logo">
+                lunch_dining
+            </span>
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+            <a>
+                <span class="material-symbols-outlined account_circle">
+                account_circle
+                </span>
+            </a>
+        {% else %}
+            <a class="signup" href="/signup">Sign Up</a>
+        {% endif %}
+    </nav>
+
+    <section>
+        <h1><span class="ordered">Ordered</span> <span class="foods">Foods</span></h1>
+        <div class="qty">
+            <img src="../static/img/ordered.png" alt="">
+            <article>
+                <h2>Quantity:</h2>
+                <div class="ordered-foods"><span>x{{qty_no}}</span>{{burger}}<span class="price"> ${{qty_no*4}}</span></div>
+                <div class="ordered-foods"><span>x{{qty_no1}}</span>{{burger1}}<span class="price">${{qty_no1*4}}</span></div>
+                <div class="ordered-foods"><span>x{{qty_no2}}</span>{{burger2}}<span class="price">${{qty_no2*4}}</span></div>
+            </article>
+        </div>
+        <div class="total">${{4*(qty_no+qty_no1+qty_no2)}}</div>
+
+        <div class="placed" >
+            <h3>Order Placed</h3>
+            <span class="material-symbols-outlined truck">
+                local_shipping
+                </span>
+        </div>
+        <form class="dropdown">
+            <div class="emailadd">{{user.email}}</div>
+            <a class="my-ordered">Ordered</a>
+            <a type="submit" class="logout" href="/logout">Logout</a>
+        </form>
+    </section>
+
+    <script src="../static/script.js"></script>
+    
+</body>
+</html>

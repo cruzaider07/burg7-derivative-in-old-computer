@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito+Sans:opsz@6..12&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.offscreen{
+    position: absolute;
+    left: -10000px;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+input, 
+textarea,
+button{
+    font: inherit;
+}
+
+/* VARIABLES */
+
+:root{
+    --ff: 'Nunito Sans', sans-serif;
+    --ff-headings: "Fugaz One", sans-serif;
+    --fs: clamp(1rem, 2.2vh, 1.2rem);
+
+    /* COLOR */
+
+    --color: white;
+    --link-color: white;
+    --link-hover: orange;
+    --border: 2px solid orange;
+    --button-hover: black;
+    --col-bgcolor: orange;
+    --col-bdcolor: rgb(184, 0, 0);
+    --dark-red: rgb(184, 0, 0);
+    --nav-bg-color: rgb(184, 0, 0);
+}
+
+/* GENERAL */
+
+html{
+    scroll-behavior: smooth;
+    font-family: var(--ff);
+    font-size: var(--fs);
+}
+
+body{
+    overflow: hidden;
+}
+
+section{
+    height: 100vh;
+    position: absolute;
+    top: 59px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    padding: 1rem 2em;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.logo{
+    position: relative;
+    top: 2px;
+    transform: scale(2);
+}
+
+.logo:hover{
+    color: orange;
+}
+
+ul{
+    list-style-type: none;
+    display: flex; 
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: 3rem;
+
+}
+
+a:any-link{
+    color: var(--link-color);
+}
+
+nav ul li a:hover,
+nav ul li a:focus-visible{
+
+    color: var(--link-hover); 
+}
+
+.signup{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid orange;
+    border-radius: 1rem;
+}
+
+.signup:hover{
+    background-color: orange;
+    color:rgb(184, 0, 0);
+}
+
+.account_circle{
+    color: white;
+    scale: 2;
+}
+
+section{
+    position: absolute;
+}
+
+.section3{
+    background-color: #ffa500;
+    text-align: center;
+}
+
+.section3 h1{
+    padding: 3rem;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.about__us{
+    color: white;
+    text-shadow: 0 0 6px black;
+}
+
+.section3{
+    padding-top: 3rem;
+}
+
+.section3 article{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-areas: 
+        "img about about";
+    padding: 2rem;
+    gap: 5rem;
+    align-items: center;
+    line-height: 2;
+}
+
+.img-container{
+    grid-area: img;
+}
+
+.p-c{
+    grid-area: about;
+}
+
+.burg{
+    font-weight: bold;
+    color: white;
+}
+
+.Ronald{
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+
+

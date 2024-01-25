@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ronald">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burg - About</title>
+    <link rel="icon" href="../static/img/logo_orange.ico">
+    <link rel="stylesheet" href="../static/css/about.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <nav>
+        <a class="logo-container" href="/">
+            <span class="material-symbols-outlined logo">
+                lunch_dining
+            </span>
+        </a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        
+        {% if user.is_authenticated %}
+            <a>
+                <span class="material-symbols-outlined account_circle">
+                account_circle
+                </span>
+            </a>
+        {% else %}
+            <a class="signup" href="/signup">Sign Up</a>
+        {% endif %}
+    </nav>
+
+
+    <section class="section3" id="about">
+        <h1>About <span class="about__us">Us</span></h1>
+        <article>
+            <div class="img-container">
+                <img src="../static/img/burger-about1r.png" alt="">
+            </div>
+
+            <div class="p-c">
+                <p>We are <span class="burg">Burg</span>, founded on 2023 by <span class="Ronald">Ronald</span> from Philippines. We are here to serve you our best burgers recognized 
+                    around the world with branches to almost every country. Burgers made by Burg are made out of the great recipes of Ronald's great
+                    ascendants. Our vision is to give you a satisfying feeling with 
+                    our burger made with love, giving you relaxation for your 
+                    welfare on the days you are working with tasks and even on your recreational time. </p>
+            </div>
+        </article>
+            <form class="dropdown">
+                <div class="emailadd">{{user.email}}</div>
+                <a class="my-ordered">Ordered</a>
+                <a type="submit" class="logout" href="/logout">Logout</a>
+            </form>
+    </section>
+</body>
+</html>
